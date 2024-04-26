@@ -9,6 +9,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
@@ -111,6 +112,7 @@ const Register = () => {
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+          <h2 className="mb-6 pl-8">Already have an account?? Please <Link className="text-blue-700 font-bold underline" to='/login'>Login</Link></h2>
         </div>
       </div>
       <ToastContainer/>

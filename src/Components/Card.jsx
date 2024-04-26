@@ -19,7 +19,7 @@ const Card = ({ data }) => {
     email,
   } = data;
   return (
-    <div className="shadow-2xl">
+    <div className="shadow-2xl rounded-b-xl">
       <div>
         <img className="w-full h-[200px]" src={photo} alt="" />
       </div>
