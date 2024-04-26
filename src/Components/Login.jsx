@@ -4,6 +4,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
 
     const { handleLogin } = useContext(AuthContext)
@@ -24,8 +27,11 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
               });
+              console.log(result.user)
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            toast(error.message)
+        })
         
     }
     return (
@@ -70,6 +76,7 @@ const Login = () => {
             </form>
           </div>
         </div>
+        <ToastContainer/>
       </div>
     );
 };

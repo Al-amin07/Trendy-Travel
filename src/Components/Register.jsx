@@ -4,6 +4,13 @@ import { updateProfile } from "firebase/auth";
 import auth from "../Firebase/Firebase.config";
 
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Register = () => {
     const { handleregister, logOut } = useContext(AuthContext)
 
@@ -23,14 +30,22 @@ const Register = () => {
               .then(() => {
                 // Profile updated!
                 logOut()
-                .then()
+                .then(() => {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Successfully Register",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                })
                 .catch()
                 // ...
               }).catch((error) => {
                 console.log(error)
               })
         })
-        .catch(error => console.log(error))
+        .catch(error => toast(error.message))
     }
 
   return (
@@ -97,6 +112,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
