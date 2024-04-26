@@ -13,6 +13,8 @@ import AddTourist from "./Components/AddTourist.jsx";
 import AllTourist from "./Components/AllTourist.jsx";
 import MyList from "./Components/MyList.jsx";
 import Private from "./Components/Private.jsx";
+import AllTourDetails from "./Components/AllTourDetails.jsx";
+import CardDetails from "./Components/CardDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +45,18 @@ const router = createBrowserRouter([
       {
         path: '/myList',
         element: <Private><MyList></MyList></Private>
+      },
+      {
+        path: '/details/:id',
+        loader: ({params}) => fetch(`http://localhost:5000/tourists/${params.id}`),
+        element: <AllTourDetails></AllTourDetails>
+      },
+      {
+        path: '/cardDetails/:id',
+        element: <CardDetails></CardDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/tourists/${params.id}`)
       }
+    
     ],
   },
 ]);

@@ -4,7 +4,7 @@ import { IoTime } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const AllTourCard = ({ tour }) => {
-  console.log(tour);
+
   const {
     _id,
     photo,
