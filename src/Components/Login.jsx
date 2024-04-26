@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 const Login = () => {
 
@@ -14,7 +16,15 @@ const Login = () => {
        
         const password = form.password.value
         handleLogin(email, password)
-        .then(result => console.log(result.user))
+        .then(result => {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Successfully Login",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        })
         .catch(error => console.log(error))
         
     }

@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/Firebase.config";
 
 
 const Register = () => {
@@ -12,13 +14,21 @@ const Register = () => {
         const email = form.email.value
         const photo = form.photo.value
         const password = form.password.value
-        const  user = { name, email, photo, password};
-        console.log(user)
+       
         handleregister(email, password)
         .then(result => {
-            logOut()
-            .then()
-            .catch()
+            updateProfile(auth.currentUser, {
+                displayName: name, photoURL: photo
+              })
+              .then(() => {
+                // Profile updated!
+                logOut()
+                .then()
+                .catch()
+                // ...
+              }).catch((error) => {
+                console.log(error)
+              })
         })
         .catch(error => console.log(error))
     }
