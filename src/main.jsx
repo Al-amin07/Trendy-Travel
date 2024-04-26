@@ -10,6 +10,9 @@ import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import AddTourist from "./Components/AddTourist.jsx";
+import AllTourist from "./Components/AllTourist.jsx";
+import MyList from "./Components/MyList.jsx";
+import Private from "./Components/Private.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +33,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/addTourist',
-        element: <AddTourist></AddTourist>
+        element: <Private><AddTourist></AddTourist></Private>
+      },
+      {
+        path: '/allTourists', 
+        element: <AllTourist></AllTourist>,
+        loader: () => fetch('http://localhost:5000/tourists')
+      },
+      {
+        path: '/myList',
+        element: <Private><MyList></MyList></Private>
       }
     ],
   },

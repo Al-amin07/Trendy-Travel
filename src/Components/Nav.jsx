@@ -21,6 +21,12 @@ const Nav = () => {
       <li>
         <NavLink to="/addTourist">Add Tourist</NavLink>
       </li>
+      <li>
+        <NavLink to="/allTourists">All Tourists</NavLink>
+      </li>
+      <li>
+        <NavLink to="/myList">My List</NavLink>
+      </li>
     </>
   );
 

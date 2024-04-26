@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../Provider/AuthProvider";
+
 const AddTourist = () => {
+  const { user } = useContext(AuthContext);
   const handleAddTourist = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,10 +18,35 @@ const AddTourist = () => {
     const time = form.time.value;
     const visitor = form.visitor.value;
     const email = form.email.value;
+    const dname = form.dname.value;
     const addTourist = {
-       photo, spotname, country, short, location, cost, season, time, visitor, email,
+      photo,
+      dname,
+      spotname,
+      country,
+      short,
+      location,
+      cost,
+      season,
+      time,
+      visitor,
+      email,
     };
-    console.log(addTourist)
+    console.log(addTourist);
+    fetch("http://localhost:5000/tourists", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addTourist),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast("Successfully Added to Database");
+          form.reset();
+        }
+      });
   };
 
   return (
@@ -23,7 +54,7 @@ const AddTourist = () => {
       <h2 className="text-3xl font-bold text-center mb-4">
         Add Tourists Spots
       </h2>
-      <form onSubmit={handleAddTourist} className="grid grid-cols-2 gap-6">
+      <form onSubmit={handleAddTourist} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* 1 */}
         <div className="form-control">
           <label className="label">
@@ -170,11 +201,27 @@ const AddTourist = () => {
         <div className="form-control">
           <label className="label">
             <span className="label-text text-xl font-semibold">
+              User Name:{" "}
+            </span>
+          </label>
+          <input
+            type="text"
+            defaultValue={user.displayName}
+            name="dname"
+            placeholder="Name"
+            className="input input-bordered"
+            required
+          />
+        </div>
+        <div className="form-control col-span-2">
+          <label className="label">
+            <span className="label-text text-xl font-semibold">
               User Email:{" "}
             </span>
           </label>
           <input
             type="text"
+            defaultValue={user.email}
             name="email"
             placeholder="Email"
             className="input input-bordered"
@@ -185,6 +232,7 @@ const AddTourist = () => {
           <input className="w-full  " type="submit" value="Add" />
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -24,6 +24,7 @@ const Register = () => {
        
         handleregister(email, password)
         .then(result => {
+            console.log(result.user)
             updateProfile(auth.currentUser, {
                 displayName: name, photoURL: photo
               })
