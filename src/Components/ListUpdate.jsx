@@ -49,7 +49,7 @@ const ListUpdate = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        
+        console.log(data);
         if (data.matchedCount) {
           toast("Successfully Added to Database");
           form.reset();

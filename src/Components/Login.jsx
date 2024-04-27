@@ -8,12 +8,14 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
 
-    const { handleLogin, googleLogin, githubLogin } = useContext(AuthContext)
+    const { handleLogin, googleLogin, githubLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleUserLogin = e => {
         e.preventDefault();
@@ -32,6 +34,7 @@ const Login = () => {
                 timer: 1500
               });
               console.log(result.user)
+              navigate(location?.state ?  location.state : '/')
         })
         .catch(error => {
             toast(error.message)

@@ -16,11 +16,13 @@ import Private from "./Components/Private.jsx";
 import AllTourDetails from "./Components/AllTourDetails.jsx";
 import CardDetails from "./Components/CardDetails.jsx";
 import ListUpdate from "./Components/ListUpdate.jsx";
+import ErrorPage from "./Components/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
