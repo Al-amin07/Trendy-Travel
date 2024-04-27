@@ -9,6 +9,12 @@ const HomeCards = () => {
         .then(res => res.json())
         .then(data => setDatas(data))
     }, [])
+
+    if(datas.length>6){
+        const newData = datas.slice(0,6);
+      
+        setDatas(newData)
+    }
     
     return (
         <div className="grid grid-cols-3 gap-6">

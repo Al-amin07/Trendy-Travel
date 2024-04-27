@@ -1,73 +1,75 @@
-import { useContext, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AuthContext } from "../Provider/AuthProvider";
 
-const AddTourist = () => {
-  const { user } = useContext(AuthContext);
+import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
+const ListUpdate = () => {
+  // const { user } = useContext(AuthContext);
+  const data = useLoaderData();
+  const [user , setUser] = useState(data);
+  
   const [country, setCountry] = useState("");
 
   const handleChange = (e) => {
     setCountry(e.target.value);
   };
 
-  const handleAddTourist = (e) => {
+  const handleUpdateTourist = (e) => {
     e.preventDefault();
     const form = e.target;
     const photo = form.photo.value;
     const spotname = form.spotname.value;
-    
+
     const short = form.short.value;
     const location = form.location.value;
     const cost = form.cost.value;
     const season = form.season.value;
     const time = form.time.value;
     const visitor = form.visitor.value;
-    const email = form.email.value;
-    const dname = form.dname.value;
+
     const addTourist = {
       photo,
-      dname,
-      spotname,
       country,
+      spotname,
       short,
       location,
       cost,
       season,
       time,
       visitor,
-      email,
     };
-    console.log(addTourist);
-    fetch("http://localhost:5000/tourists", {
-      method: "POST",
+    
+    fetch(`http://localhost:5000/update/${user._id}`, {
+      method: "PUT",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(addTourist),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        
+        if (data.matchedCount) {
           toast("Successfully Added to Database");
-          // form.reset();
+          form.reset();
+
         }
       });
+
   };
 
   return (
     <div className="bg-base-200 px-8 py-12 mb-16">
       <h2 className="text-3xl font-bold text-center mb-4">
-        Add Tourists Spots
+        UpdateTourists Spots
       </h2>
       <form
-        onSubmit={handleAddTourist}
+        onSubmit={handleUpdateTourist}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
-        
       >
-       
-       <div className=" flex items-end">
+        {/* 1 */}
+        <div className=" flex items-end">
           <select
             onChange={handleChange}
             className="rounded-lg border-2 w-full py-2 pl-4 text-xl"
@@ -84,8 +86,6 @@ const AddTourist = () => {
             <option value="cambodia">Cambodia</option>
           </select>
         </div>
-        {/* 1 */}
-
         <div className="form-control">
           <label className="label">
             <span className="label-text text-xl font-semibold">Photo : </span>
@@ -116,8 +116,6 @@ const AddTourist = () => {
         </div>
 
         {/* 3 */}
-       
-       
 
         {/* 4 */}
         <div className="form-control">
@@ -200,7 +198,7 @@ const AddTourist = () => {
         </div>
 
         {/* 9  */}
-        <div className="form-control">
+        <div className="form-control col-span-2">
           <label className="label">
             <span className="label-text text-xl font-semibold">
               Total Visitors Per Year :{" "}
@@ -216,43 +214,14 @@ const AddTourist = () => {
         </div>
 
         {/* 10  */}
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text text-xl font-semibold">
-              User Name:{" "}
-            </span>
-          </label>
-          <input
-            type="text"
-            defaultValue={user.displayName}
-            name="dname"
-            placeholder="Name"
-            className="input input-bordered"
-            required
-          />
-        </div>
-        <div className="form-control col-span-2">
-          <label className="label">
-            <span className="label-text text-xl font-semibold">
-              User Email:{" "}
-            </span>
-          </label>
-          <input
-            type="text"
-            defaultValue={user.email}
-            name="email"
-            placeholder="Email"
-            className="input input-bordered"
-            required
-          />
-        </div>
+
         <div className="col-span-2 btn text-white text-xl bg-[#4A33FB]">
-          <input className="w-full  " type="submit" value="Add" />
+          <input className="w-full  " type="submit" value="Update" />
         </div>
       </form>
-      <ToastContainer />
+      <ToastContainer/>
     </div>
   );
 };
 
-export default AddTourist;
+export default ListUpdate;

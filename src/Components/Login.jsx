@@ -40,37 +40,41 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
-        googleLogin()
-        .then(result => {
-            console.log(result.user)
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Successfully Login",
-                showConfirmButton: false,
-                timer: 1500
-              });
-        })
-        .catch(error => {
-            toast(error.message)
-        })
+      googleLogin()
+      .then(result => {
+        console.log(result)
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Login",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch(error => {
+        toast(error.message)
+      })
+    }
+    const handleGithubLogin = () => {
+      githubLogin()
+      .then(result => {
+        console.log(result)
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Login",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch(error => {
+        toast(error.message)
+      })
     }
 
-    const handleGithubLogin = () => {
-        githubLogin()
-        .then((result => {
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Successfully Login",
-                showConfirmButton: false,
-                timer: 1500
-              });
-        }))
-        .catch(error => {
-            toast(error.message)
-        })
-    }
+    
+
+    
     return (
         <div className="hero  py-8 bg-gradient-to-r from-[#59B1DF] to-[#D839F5] ">
         <div className=" w-full flex flex-col items-center">
@@ -115,7 +119,7 @@ const Login = () => {
                 <h2 className="text-2xl font-bold text-center mb-4">Login With </h2>
                <div className="flex justify-center gap-4 mb-4">
                <button onClick={handleGoogleLogin} className="btn btn-outline rounded-2xl text-xl"><FaGoogle/>Google Login</button>
-                <button onClick={handleGithubLogin} className="btn btn-outline rounded-2xl text-xl"><FaGithub/>Github Login</button>
+                <button onClick={handleGithubLogin}  className="btn btn-outline rounded-2xl text-xl"><FaGithub/>Github Login</button>
                </div>
             </div>
             <h2 className="mb-6 pl-8 text-center">Dont Have Any Account? Please <Link className="text-blue-700 font-bold underline" to='/register'>Register</Link></h2>

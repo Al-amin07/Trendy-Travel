@@ -7,7 +7,7 @@ const CardDetails = () => {
 
   const {
     photo,
-    dname,
+    
     spotname,
     country,
     short,
@@ -16,11 +16,11 @@ const CardDetails = () => {
     season,
     time,
     visitor,
-    email,
+   
   } = data;
 
   return (
-    <div className="shadow-2xl flex gap-8 rounded-xl">
+    <div className="shadow-2xl flex gap-6  rounded-xl">
       <div className="flex-1 ">
         <img
           className="w-full h-[300px] md:h-[400px] lg:h-[500px]"

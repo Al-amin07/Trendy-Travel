@@ -8,22 +8,21 @@ const AllTourCard = ({ tour }) => {
   const {
     _id,
     photo,
-    dname,
+    
     spotname,
     country,
-    short,
+   
     location,
     cost,
-    season,
+   
     time,
-    visitor,
-    email,
+   
   } = tour;
   return (
     <div className="  px-8 py-8 flex gap-16 border
-    ">
-     <div className="bg-base-200 p-12">
-        <img className="h-[150px] w-[150px] rounded-xl" src={photo} alt="" />
+   shadow-xl ">
+     <div className="bg-base-200 ">
+        <img className="h-[250px] w-[250px] rounded-xl" src={photo} alt="" />
      </div>
      <div className="space-y-3">
         <h2 className="text-3xl font-semibold ">{spotname}</h2>

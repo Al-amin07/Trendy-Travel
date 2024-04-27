@@ -15,6 +15,7 @@ import MyList from "./Components/MyList.jsx";
 import Private from "./Components/Private.jsx";
 import AllTourDetails from "./Components/AllTourDetails.jsx";
 import CardDetails from "./Components/CardDetails.jsx";
+import ListUpdate from "./Components/ListUpdate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
         path: '/cardDetails/:id',
         element: <CardDetails></CardDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/tourists/${params.id}`)
+      },
+      {
+        path: '/update/:id',
+        loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`),
+        element: <Private><ListUpdate></ListUpdate></Private>,
       }
     
     ],
