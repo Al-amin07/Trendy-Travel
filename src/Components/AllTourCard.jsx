@@ -19,14 +19,14 @@ const AllTourCard = ({ tour }) => {
    
   } = tour;
   return (
-    <div className="  px-8 py-8 flex gap-16 border
+    <div className="  px-8 py-8 flex flex-col md:flex-row gap-16 border
    shadow-xl ">
      <div className="bg-base-200 ">
         <img className="h-[250px] w-[250px] rounded-xl" src={photo} alt="" />
      </div>
      <div className="space-y-3">
-        <h2 className="text-3xl font-semibold ">{spotname}</h2>
-        <h2 className="text-2xl font-medium">{country}</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold ">{spotname}</h2>
+        <h2 className="text-xl md:text-2xl font-medium">{country}</h2>
         <h2 className="text-lg text-[#8C9293]">{location}</h2>
         <div className="flex gap-0">
             <h2 className="mr-2 font-medium">Cost : </h2>

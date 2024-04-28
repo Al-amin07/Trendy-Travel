@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className=" mt-16 px-12 md:px-16  lg:px-32 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-20 gap-5 bg-neutral text-neutral-content">
       <nav className="">
-        <h6 className="footer-title text-xl">Comfort Estate</h6>
+        <h6 className="footer-title text-xl">Nature Nest</h6>
         <h2 className="text-bg footer-title">Find Us On</h2>
         <ul className="flex gap-4">
           <li>

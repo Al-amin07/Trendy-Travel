@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         loader: ({params}) => fetch(`http://localhost:5000/tourists/${params.id}`),
-        element: <AllTourDetails></AllTourDetails>
+        element: <Private><AllTourDetails></AllTourDetails></Private>
       },
       {
         path: '/cardDetails/:id',
