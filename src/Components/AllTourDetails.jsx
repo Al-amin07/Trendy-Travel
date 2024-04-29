@@ -11,7 +11,7 @@ const AllTourDetails = () => {
         photo,
         dname,
         spotname,
-        country,
+        country_name,
         short,
         location,
         cost,
@@ -22,7 +22,7 @@ const AllTourDetails = () => {
       } = data;
     
     return (
-        <div className="shadow-2xl rounded-b-xl flex gap-8 rounded-xl">
+        <div className="shadow-2xl  flex gap-8 rounded-xl">
         <div className="flex-1 ">
           <img className="w-full h-[300px] md:h-[400px] lg:h-[500px]" src={photo} alt="" />
         </div>
@@ -31,7 +31,7 @@ const AllTourDetails = () => {
 
         <div className="px-6 space-y-4 mt-3 flex-1 ">
           <h2 className="text-5xl font-semibold">{spotname}</h2>
-          <h2 className="text-3xl font-medium">Country : {country}</h2>
+          <h2 className="text-3xl font-medium">Country : {country_name}</h2>
           <h2 className="text-3xl font-medium">Location : {location}</h2>
           <h2 className="text-[#9B9D9D]">{short}</h2>
           

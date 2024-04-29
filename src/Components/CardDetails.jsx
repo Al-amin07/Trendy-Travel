@@ -9,7 +9,7 @@ const CardDetails = () => {
     photo,
     
     spotname,
-    country,
+    country_name,
     short,
     location,
     cost,
@@ -31,7 +31,7 @@ const CardDetails = () => {
 
       <div className="px-6 space-y-4 mt-3 flex-1 ">
         <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold">{spotname}</h2>
-        <h2 className="text-2xl md:text-3xl lg:text-3xl font-medium">Country : {country}</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-3xl font-medium">Country : {country_name}</h2>
         <h2 className="text-lg md:text-xl lg:text-3xl font-medium">Location : {location}</h2>
         <h2 className="text-[#9B9D9D]">{short}</h2>
 
@@ -48,7 +48,7 @@ const CardDetails = () => {
           </div>
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex flex-col md:flex-row gap-5">
           <div className="flex gap-0 btn rounded-full bg-[#E0EEFF] text-[#32A8FF]">
             <h2 className="mr-2 font-bold text-bg md:text-lg">Total Cost : </h2>
             <MdAttachMoney className="text-2xl" />

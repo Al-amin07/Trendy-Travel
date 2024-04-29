@@ -9,7 +9,7 @@ const Card = ({ data }) => {
     photo,
     
     spotname,
-    country,
+    country_name,
     short,
     location,
     cost,
@@ -25,7 +25,7 @@ const Card = ({ data }) => {
       </div>
       <div className="px-6 space-y-2 mt-3">
         <h2 className="text-2xl font-semibold">{spotname}</h2>
-        <h2 className="text-xl font-medium">Country : {country}</h2>
+        <h2 className="text-xl font-medium">Country : {country_name}</h2>
         <h2>Location : {location}</h2>
         <h2 className="text-[#9B9D9D]">{short.slice(0,100)}</h2>
         
