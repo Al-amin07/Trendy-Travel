@@ -16,9 +16,9 @@ const Countries = () => {
         .then(data => setCountries(data))
     }, [])
     return (
-        <div className="my-32">
+        <div className=" my-12 lg:my-24">
             <h2 className="text-4xl font-bold text-center mb-6">Countries You like to Visit</h2>
-            <div className="grid grid-cols-3 gap-6 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {
             countries.map(country => <Country key={country._id} country={country}></Country>)
           } 

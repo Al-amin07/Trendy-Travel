@@ -1,10 +1,18 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 const Country = ({country}) => {
-    const { country_name, image, short_description} = country
+    const { country_name, image, short_description} = country;
+    useEffect(() => {
+      AOS.init({
+        duration: '1000'
+      })
+    }, [])
   return (
-    <Link to={`/countries/${country_name}`}>
-    <div className="card card-compact  bg-base-100 shadow-xl">
+    <Link data-aos='fade-up' to={`/countries/${country_name}`}>
+    <div className="card flex  card-compact  bg-base-100 shadow-xl">
       <figure>
         <img className='h-[260px]'
           src={image}

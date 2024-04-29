@@ -2,6 +2,9 @@ import PropTypes from "prop-types";
 import { IoTime } from "react-icons/io5";
 import { MdAttachMoney } from "react-icons/md";
 import { Link } from "react-router-dom";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 const Card = ({ data }) => {
   const {
@@ -18,8 +21,14 @@ const Card = ({ data }) => {
    
     
   } = data;
+
+  useEffect(() => {
+    AOS.init({
+      duration: '1000'
+    })
+  }, [])
   return (
-    <div className="shadow-2xl  rounded-b-xl">
+    <div data-aos='fade-left' className="shadow-2xl  rounded-b-xl">
       <div>
         <img className=" w-full h-[250px]" src={photo} alt="" />
       </div>

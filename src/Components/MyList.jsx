@@ -58,11 +58,11 @@ const MyList = () => {
         <thead>
           <tr>
             <th></th>
-            <th className="text-3xl font-bold">Spot Name</th>
-            <th className="text-3xl font-bold">Country</th>
-            <th className="text-3xl font-bold">Cost</th>
-            <th className="text-3xl font-bold">Location</th>
-            <th className="text-3xl font-bold">Action</th>
+            <th className="text-lg md:text-xl lg:text-3xl font-bold">Spot Name</th>
+            <th className="text-lg md:text-xl lg:text-3xl font-bold">Country</th>
+            <th className="text-lg md:text-xl lg:text-3xl font-bold">Cost</th>
+            <th className="text-lg md:text-xl lg:text-3xl font-bold">Location</th>
+            <th className="text-lg md:text-xl lg:text-3xl font-bold">Action</th>
           </tr>
         </thead>
         <tbody>

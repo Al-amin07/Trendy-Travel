@@ -31,24 +31,24 @@ const Banner = () => {
      
       <SwiperSlide style={{
         backgroundImage: "url('/one.jpg')"
-      }} className="bg-center bg-no-repeat bg-cover py-52">
+      }} className="bg-center bg-no-repeat bg-cover py-20 md:py-36 lg:py-52">
         {/* <img src="/five.webp" alt="" className="w-full" /> */}
-        <h2 className="text-5xl text-center text-white font-semibold mb-4">Discover Your Next Adventure</h2>
-        <p className="w-1/2 mx-auto text-[#E7EFF2] ">Ready to turn your travel dreams into reality? With just a few clicks, you can begin your journey towards new horizons and unforgettable experiences</p>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl text-center text-white font-semibold mb-4">Discover Your Next Adventure</h2>
+        <p className="w-full text-center md:w-1/2 mx-auto text-[#E7EFF2] ">Ready to turn your travel dreams into reality? With just a few clicks, you can begin your journey towards new horizons and unforgettable experiences</p>
       </SwiperSlide>
       <SwiperSlide style={{
         backgroundImage: "url('/six.jpg')"
-      }} className="bg-center bg-no-repeat bg-cover py-52 ">
+      }} className="bg-center bg-no-repeat bg-cover py-20 md:py-36 lg:py-52 ">
         {/* <img src="/five.webp" alt="" className="w-full" /> */}
-        <h2 className="text-5xl text-center text-white font-semibold mb-4">Discover Your Next Adventure</h2>
-        <p className="w-1/2 mx-auto text-[#E7EFF2] ">Ready to turn your travel dreams into reality? With just a few clicks, you can begin your journey towards new horizons and unforgettable experiences</p>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl text-center text-white font-semibold mb-4">Discover Your Next Adventure</h2>
+        <p className="w-full text-center md:w-1/2 mx-auto text-[#E7EFF2] ">Ready to turn your travel dreams into reality? With just a few clicks, you can begin your journey towards new horizons and unforgettable experiences</p>
       </SwiperSlide>
       <SwiperSlide style={{
         backgroundImage: "url('/five.webp')"
-      }} className="bg-center bg-no-repeat bg-cover py-52">
+      }} className="bg-center bg-no-repeat bg-cover py-20 md:py-36 lg:py-52">
         {/* <img src="/five.webp" alt="" className="w-full" /> */}
-        <h2 className="text-5xl text-center text-white font-semibold mb-4">Discover Your Next Adventure</h2>
-        <p className="w-1/2 mx-auto text-white ">Ready to turn your travel dreams into reality? With just a few clicks, you can begin your journey towards new horizons and unforgettable experiences</p>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl text-center text-white font-semibold mb-4">Discover Your Next Adventure</h2>
+        <p className="w-full text-center md:w-1/2 mx-auto text-white ">Ready to turn your travel dreams into reality? With just a few clicks, you can begin your journey towards new horizons and unforgettable experiences</p>
       </SwiperSlide>
     
       
