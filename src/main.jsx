@@ -17,6 +17,7 @@ import AllTourDetails from "./Components/AllTourDetails.jsx";
 import CardDetails from "./Components/CardDetails.jsx";
 import ListUpdate from "./Components/ListUpdate.jsx";
 import ErrorPage from "./Components/ErrorPage.jsx";
+import AllCountries from "./Components/Countries/AllCountries.jsx";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
         path: '/update/:id',
         loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`),
         element: <Private><ListUpdate></ListUpdate></Private>,
+      },
+      {
+        path: '/countries/:country',
+        element: <AllCountries></AllCountries>,
+        // loader: ({params}) => fetch(`http://localhost:5000/${params.country}`)
       }
     
     ],

@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import Countries from "./Countries/Countries";
 import HomeCards from "./HomeCards";
 import Partnre from "./Partnre";
 import Why from "./Why";
@@ -10,6 +11,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <HomeCards></HomeCards>
+            <Countries></Countries>
             <Slide>
             <Why></Why>
             <Partnre></Partnre>

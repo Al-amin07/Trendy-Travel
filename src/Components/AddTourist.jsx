@@ -6,10 +6,10 @@ import { AuthContext } from "../Provider/AuthProvider";
 const AddTourist = () => {
   const { user } = useContext(AuthContext);
 
-  const [country, setCountry] = useState("");
+  const [country_name, setCountryName] = useState("");
 
   const handleChange = (e) => {
-    setCountry(e.target.value);
+    setCountryName(e.target.value);
   };
 
   const handleAddTourist = (e) => {
@@ -30,7 +30,7 @@ const AddTourist = () => {
       photo,
       dname,
       spotname,
-      country,
+      country_name,
       short,
       location,
       cost,
@@ -77,7 +77,7 @@ const AddTourist = () => {
               Select a Country
             </option>
             <option value="bangladesh">Bangladesh</option>
-            <option value="Malaysia">Malaysia</option>
+            <option value="malaysia">Malaysia</option>
             <option value="vietnam">Vietnam</option>
             <option value="indonesia">Indonesia</option>
             <option value="thailand">Thailand</option>

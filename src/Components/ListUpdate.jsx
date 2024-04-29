@@ -79,7 +79,7 @@ const ListUpdate = () => {
               Select a Country
             </option>
             <option value="bangladesh">Bangladesh</option>
-            <option value="Malaysia">Malaysia</option>
+            <option value="malaysia">Malaysia</option>
             <option value="vietnam">Vietnam</option>
             <option value="indonesia">Indonesia</option>
             <option value="thailand">Thailand</option>
