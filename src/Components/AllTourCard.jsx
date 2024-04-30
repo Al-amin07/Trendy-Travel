@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { MdAttachMoney } from "react-icons/md";
+
 import { IoTime } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -19,6 +19,7 @@ const AllTourCard = ({ tour }) => {
     
    
   } = tour;
+  // "rewrites": [{"source": "/(.*)", "destination": "/"}]
   return (
     <div className="  px-8 py-8 flex flex-col md:flex-row gap-16 border
    shadow-xl ">
@@ -32,7 +33,7 @@ const AllTourCard = ({ tour }) => {
         {/* <h2 className=" text-[#8C9293]">{short}</h2> */}
         <div className="flex gap-0">
             <h2 className="mr-2 font-medium">Cost : </h2>
-        <MdAttachMoney className="text-2xl"/>
+        {/* <MdAttachMoney className="text-2xl"/> */}
         <h2 >{cost}</h2>
         </div>
        

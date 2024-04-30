@@ -12,7 +12,7 @@ const MyList = () => {
   const [lists, setLists] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myList/${user?.email}`)
+    fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/myList/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setLists(data);
@@ -36,7 +36,7 @@ const MyList = () => {
           text: "Your file has been deleted.",
           icon: "success"
         });
-        fetch(`http://localhost:5000/tourists/${id}`, {
+        fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/tourists/${id}`, {
           method: 'DELETE'
       })
       .then(res => res.json())

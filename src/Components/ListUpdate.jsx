@@ -40,7 +40,7 @@ const ListUpdate = () => {
       visitor,
     };
     
-    fetch(`http://localhost:5000/update/${user._id}`, {
+    fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/update/${user._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

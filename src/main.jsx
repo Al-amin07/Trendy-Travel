@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/allTourists', 
         element: <AllTourist></AllTourist>,
-        loader: () => fetch('http://localhost:5000/tourists')
+        loader: () => fetch('https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/tourists')
       },
       {
         path: '/myList',
@@ -52,23 +52,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/tourists/${params.id}`),
+        loader: ({params}) => fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/tourists/${params.id}`),
         element: <Private><AllTourDetails></AllTourDetails></Private>
       },
       {
         path: '/cardDetails/:id',
         element: <CardDetails></CardDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/tourists/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/tourists/${params.id}`)
       },
       {
         path: '/update/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`),
+        loader: ({params}) => fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/update/${params.id}`),
         element: <Private><ListUpdate></ListUpdate></Private>,
       },
       {
         path: '/countries/:country',
         element: <AllCountries></AllCountries>,
-        // loader: ({params}) => fetch(`http://localhost:5000/${params.country}`)
+        // loader: ({params}) => fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/${params.country}`)
       }
     
     ],

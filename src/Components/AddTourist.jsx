@@ -40,7 +40,7 @@ const AddTourist = () => {
       email,
     };
     console.log(addTourist);
-    fetch("http://localhost:5000/tourists", {
+    fetch("https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/tourists", {
       method: "POST",
       headers: {
         "content-type": "application/json",

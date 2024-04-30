@@ -5,7 +5,7 @@ import Card from "./Card";
 const HomeCards = () => {
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/tourists')
+        fetch('https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/tourists')
         .then(res => res.json())
         .then(data => {
             setDatas(data)

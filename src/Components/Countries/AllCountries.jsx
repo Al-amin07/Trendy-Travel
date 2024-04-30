@@ -7,7 +7,7 @@ const AllCountries = () => {
     console.log(country.toLowerCase());
     const [countries, setCountries] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/countries/${country}`)
+        fetch(`https://assignment-10-server-final-hf8sxjm69-alaminns-projects.vercel.app/countries/${country}`)
         .then(res => res.json())
         .then(data => setCountries(data))
     }, [])
