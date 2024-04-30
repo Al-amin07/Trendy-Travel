@@ -76,7 +76,11 @@ const Footer = () => {
           </li>
         </ul>
       </nav>
-    
+      <div className="footer footer-center p-4 w-full  col-span-2 md:col-span-3 lg:col-span-4  text-white">
+  <aside>
+    <p>Copyright © 2024 - All right reserved by Trendy Travel</p>
+  </aside>
+</div>
     </footer>
   );
 };
